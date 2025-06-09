@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOGO Offer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fffafc;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .offer-box {
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: white;
+    }
+    .discount-badge {
+      background-color: #f26f9a;
+      color: white;
+      padding: 2px 8px;
+      font-size: 12px;
+      border-radius: 6px;
+      margin-left: 10px;
+    }
+    .popular-badge {
+      position: absolute;
+      background-color: #ff6493;
+      color: white;
+      font-size: 12px;
+      padding: 2px 8px;
+      top: -12px;
+      right: -10px;
+      border-radius: 10px;
+    }
+    .unit-box {
+      border: 2px solid #eee;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      position: relative;
+      cursor: pointer;
+    }
+    .unit-box.active {
+      border-color: #f26f9a;
+      background-color: #fff3f7;
+    }
+    .price-line {
+      color: gray;
+      font-family: 'Inter';
+font-weight: 400;
+font-size: 10px;
+line-height: 100%;
+letter-spacing: 0%;
+text-decoration: line-through;
+    }
+    .btn-custom {
+      background-color: #ff5f8f;
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+    .btn-custom:hover {
+      background-color: #e74c7d;
+    }
+    .unit-dropdowns {
+      margin-top: 5px;
+      padding-top: 5px;
+      border-top: 1px solid #eee;
+    }
+    .form-select {
+      margin-bottom: 10px;
+    }
+
+    .bogo-heading {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #ff5f8f;
+  font-size: 18px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.bogo-heading::before,
+.bogo-heading::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+  margin: 0 10px;
+}
+
+.orginal-price{
+    font-family: 'Inter';
+font-weight: 600;
+font-size: 14.46px;
+line-height: 100%;
+letter-spacing: 0%;
+
+}
+
+.form-select{
+    font-family: 'Inter';
+font-weight: 400;
+font-size: 14px;
+line-height: 100%;
+letter-spacing: 0%;
+}
+.count-attribute span{
+    font-size: 12px;
+}
+
+.total-price{
+    font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0;
+}
+.button-cart{
+    font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  margin-bottom: 2px; /* Paragraph spacing */
+  letter-spacing: 0;
+}
+.powered{
+    font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 12px; /* 100% of 12px */
+  margin-bottom: 2px; /* Paragraph spacing */
+  letter-spacing: 0;
+}
+.unit-wise{
+    font-family: 'Inter';
+  font-weight: 600;
+  font-size: 14.46px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+  </style>
+</head>
+<body>
+
+<div class="offer-box">
+<!-- <h5 class="text-center text-danger fw-bold">YAY! It's BOGO</h5>-->
+  <div class="bogo-heading text-center fw-bold">
+    <span>YAY! It's BOGO</span>
+  </div>
+
+
+  <!-- Unit 1 -->
+  <div class="unit-box" onclick="selectUnit(1)" id="unit1box">
+ <div class="d-flex">
+    <div>
+        <input type="radio" name="unit" id="unit1" value="1"> 
+        <label for="unit1"><span class="unit-wise">  1 Unit</span> <span class="discount-badge">10% Off</span></label>
+        <div class="ps-3">Standard Price</div>
+    </div>
+    
+    <div class="ms-auto">
+        <div class="fw-bold"><span class="orginal-price">$10.00 USD</span> <span class="price-line "><br>$24.00 USD</span></div>
+    </div>
+    
+</div>
+    
+    <!-- Dropdowns for Unit 1 (Hidden by default) -->
+    <div class="unit-dropdowns container" id="dropdown-unit1" style="display: none;">
+        <div class="variant-attributes d-flex ps-2">
+            <div class="attribute size-attribute me-3 ps-4 py-2">Size</div>
+            <div class="attribute color-attribute  ms-5 ps-3 py-2">Colour</div>
+        </div>
+        <div class="row d-flex">
+            <div class="col-1 count-attribute">
+               <span >#1</span>
+            </div> 
+        <div class="col-4 ">
+          
+          <select class="form-select">
+            <option class="size-attributes">S</option>
+            <option class="size-attributes">M</option>
+            <option class="size-attributes">L</option>
+          </select>
+        </div>
+        <div class="col-4 ">
+          <select class="form-select">
+            <option class="size-attributes">Black</option>
+            <option class="size-attributes">Colour</option>
+          </select>
+        </div>
+      </div>
+      <div class="row d-flex">
+        <div class="col-1 count-attribute">
+            <span >#2</span>
+         </div>
+        <div class="col-4">
+          <select class="form-select">
+            <option class="size-attributes">S</option>
+            <option class="size-attributes">M</option>
+            <option class="size-attributes">L</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <select class="form-select">
+            <option class="size-attributes">Colour</option>
+            <option class="size-attributes">Black</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 2 (Default Active) -->
+  <div class="unit-box active" onclick="selectUnit(2)" id="unit2box">
+    <div class="popular-badge">MOST POPULAR</div>
+    <!-- <input type="radio" name="unit" id="unit2" value="2" checked> 
+    <label for="unit2">2 Units <span class="discount-badge">20% Off</span></label>
+    <div class="fw-bold">$18.00 USD <span class="price-line">$24.00 USD</span></div> -->
+
+    <div class="d-flex" >
+        <div>
+            <input type="radio" name="unit" id="unit2" value="2" checked> 
+            <label for="unit2"><span class="unit-wise">2 Units</span> <span class="discount-badge">20% Off</span></label>
+        </div>
+        
+        <div class="ms-auto">
+            <div class="fw-bold"><span class="orginal-price">$18.00 USD</span> <span class="price-line "><br>$24.00 USD</span></div>
+        </div>
+        
+    </div>
+    
+    <!-- Dropdowns for Unit 2 (Visible by default) -->
+    <div class="unit-dropdowns" id="dropdown-unit2">
+        <div class="variant-attributes d-flex ps-2">
+            <div class="attribute size-attribute me-3 ps-4 py-2">Size</div>
+            <div class="attribute color-attribute  ms-5 ps-3 py-2">Colour</div>
+        </div>
+        <div class="row d-flex">
+            <div class="col-1 count-attribute">
+               <span >#1</span>
+            </div> 
+        <div class="col-4 ">
+          
+          <select class="form-select">
+            <option class="size-attributes">S</option>
+            <option class="size-attributes">M</option>
+            <option class="size-attributes">L</option>
+          </select>
+        </div>
+        <div class="col-4 ">
+          <select class="form-select">
+            <option class="size-attributes">Black</option>
+            <option class="size-attributes">Colour</option>
+          </select>
+        </div>
+      </div>
+      <div class="row d-flex">
+        <div class="col-1 count-attribute">
+            <span >#2</span>
+         </div>
+        <div class="col-4">
+          <select class="form-select">
+            <option class="size-attributes">S</option>
+            <option class="size-attributes">M</option>
+            <option class="size-attributes">L</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <select class="form-select">
+            <option class="size-attributes">Colour</option>
+            <option class="size-attributes">Black</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit 3 -->
+  <div class="unit-box" onclick="selectUnit(3)" id="unit3box">
+    <!-- <input type="radio" name="unit" id="unit3" value="3"> 
+    <label for="unit3">3 Units <span class="discount-badge">30% Off</span></label>
+    <div class="fw-bold">$24.00 USD <span class="price-line">$24.00 USD</span></div> -->
+
+    <div class="d-flex" >
+        <div>
+            <input type="radio" name="unit" id="unit3" value="3"> 
+            <label for="unit3"><span class="unit-wise">3 Units</span> <span class="discount-badge">30% Off</span></label>
+        </div>
+        
+        <div class="ms-auto">
+            <div class="fw-bold"><span class="orginal-price">$24.00 USD</span> <span class="price-line "><br>$24.00 USD</span></div>
+        </div>
+        
+    </div>
+    
+    <!-- Dropdowns for Unit 3 (Hidden by default) -->
+    <div class="unit-dropdowns" id="dropdown-unit3" style="display: none;">
+        <div class="variant-attributes d-flex ps-2">
+            <div class="attribute size-attribute me-3 ps-4 py-2">Size</div>
+            <div class="attribute color-attribute  ms-5 ps-3 py-2">Colour</div>
+        </div>
+        <div class="row d-flex">
+            <div class="col-1 count-attribute">
+               <span >#1</span>
+            </div> 
+        <div class="col-4 ">
+          
+          <select class="form-select">
+            <option class="size-attributes">S</option>
+            <option class="size-attributes">M</option>
+            <option class="size-attributes">L</option>
+          </select>
+        </div>
+        <div class="col-4 ">
+          <select class="form-select">
+            <option class="size-attributes">Black</option>
+            <option class="size-attributes">Colour</option>
+          </select>
+        </div>
+      </div>
+      <div class="row d-flex">
+        <div class="col-1 count-attribute">
+            <span >#2</span>
+         </div>
+        <div class="col-4">
+          <select class="form-select">
+            <option class="size-attributes">S</option>
+            <option class="size-attributes">M</option>
+            <option class="size-attributes">L</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <select class="form-select">
+            <option class="size-attributes">Colour</option>
+            <option class="size-attributes">Black</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex py-2">
+    <div class="text-danger">Free Delivery</div>
+  <div class=" ms-auto total-price">Total : $18.00 USD</div>
+  </div>
+  
+  <button class="btn btn-custom w-100 button-cart">+ Add to Cart</button>
+  <span class="powered pt-1" style="float: right;">@ Powered by Pumper</span>
+</div>
+
+<script>
+function selectUnit(unitNumber) {
+  // Hide all dropdowns first
+  document.querySelectorAll('.unit-dropdowns').forEach(dropdown => {
+    dropdown.style.display = 'none';
+  });
+  
+  // Remove 'active' class from all unit boxes
+  document.querySelectorAll('.unit-box').forEach(box => {
+    box.classList.remove('active');
+  });
+  
+  // Show the selected dropdown & mark as active
+  const selectedDropdown = document.getElementById(`dropdown-unit${unitNumber}`);
+  if (selectedDropdown) {
+    selectedDropdown.style.display = 'block';
+  }
+  
+  const selectedBox = document.getElementById(`unit${unitNumber}box`);
+  if (selectedBox) {
+    selectedBox.classList.add('active');
+  }
+  
+  // Update the radio button selection
+  const radioButton = document.getElementById(`unit${unitNumber}`);
+  if (radioButton) {
+    radioButton.checked = true;
+  }
+  
+  // Update total price based on selection
+  updateTotalPrice(unitNumber);
+}
+
+function updateTotalPrice(unitNumber) {
+  const prices = {
+    1: "$10.00",
+    2: "$18.00",
+    3: "$24.00"
+  };
+  
+  const totalElement = document.querySelector('.fw-bold.mb-3');
+  if (totalElement) {
+    totalElement.textContent = `Total : ${prices[unitNumber]} USD`;
+  }
+}
+
+// Initialize with Unit 2 selected (MOST POPULAR)
+document.addEventListener('DOMContentLoaded', function() {
+  selectUnit(2);
+});
+</script>
+
+</body>
+</html>
