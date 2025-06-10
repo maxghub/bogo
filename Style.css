@@ -1,0 +1,137 @@
+  body {
+      background-color: #fffafc;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .offer-box {
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: white;
+    }
+    .discount-badge {
+      background-color: #f26f9a;
+      color: white;
+      padding: 2px 8px;
+      font-size: 12px;
+      border-radius: 6px;
+      margin-left: 10px;
+    }
+    .popular-badge {
+      position: absolute;
+      background-color: #ff6493;
+      color: white;
+      font-size: 12px;
+      padding: 2px 8px;
+      top: -12px;
+      right: -10px;
+      border-radius: 10px;
+    }
+    .unit-box {
+      border: 2px solid #eee;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      position: relative;
+      cursor: pointer;
+    }
+    .unit-box.active {
+      border-color: #f26f9a;
+      background-color: #fff3f7;
+    }
+    .price-line {
+      color: gray;
+      font-family: 'Inter';
+font-weight: 400;
+font-size: 10px;
+line-height: 100%;
+letter-spacing: 0%;
+text-decoration: line-through;
+    }
+    .btn-custom {
+      background-color: #ff5f8f;
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+    .btn-custom:hover {
+      background-color: #e74c7d;
+    }
+    .unit-dropdowns {
+      margin-top: 5px;
+      padding-top: 5px;
+      border-top: 1px solid #eee;
+    }
+    .form-select {
+      margin-bottom: 10px;
+    }
+
+    .bogo-heading {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #ff5f8f;
+  font-size: 18px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.bogo-heading::before,
+.bogo-heading::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+  margin: 0 10px;
+}
+
+.orginal-price{
+    font-family: 'Inter';
+font-weight: 600;
+font-size: 14.46px;
+line-height: 100%;
+letter-spacing: 0%;
+
+}
+
+.form-select{
+    font-family: 'Inter';
+font-weight: 400;
+font-size: 14px;
+line-height: 100%;
+letter-spacing: 0%;
+}
+.count-attribute span{
+    font-size: 12px;
+}
+
+.total-price{
+    font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0;
+}
+.button-cart{
+    font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  margin-bottom: 2px; /* Paragraph spacing */
+  letter-spacing: 0;
+}
+.powered{
+    font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 12px; /* 100% of 12px */
+  margin-bottom: 2px; /* Paragraph spacing */
+  letter-spacing: 0;
+}
+.unit-wise{
+    font-family: 'Inter';
+  font-weight: 600;
+  font-size: 14.46px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
